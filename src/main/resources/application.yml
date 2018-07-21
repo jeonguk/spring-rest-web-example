@@ -1,0 +1,36 @@
+app:
+  name: spring-rest-web
+
+server:
+  port: 8080
+  contextPath: /
+
+spring:
+# Datasource
+  datasource:
+    url: jdbc:h2:file:~/test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+# H2
+  h2:
+    console:
+      enabled: true
+      path: /h2_console
+# JPA
+  jpa:
+    show-sql: false
+    properties:
+      hibernate.format_sql: true
+
+logging:
+  file: logs/production_app.log
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n"
+    file: "%d %-5level [%thread] %logger{0} : %msg%n"
+  level:
+    org.springframework.web: INFO
+    com.jeonguk.web: INFO
+    org:
+     hibernate.SQL: DEBUG
+     hibernate.type.descriptor.sql.BasicBinder: TRACE
