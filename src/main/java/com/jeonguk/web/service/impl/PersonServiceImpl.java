@@ -5,22 +5,17 @@ import com.jeonguk.web.entity.Person;
 import com.jeonguk.web.exception.NotFoundException;
 import com.jeonguk.web.repository.PersonRepository;
 import com.jeonguk.web.service.PersonService;
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@AllArgsConstructor
 @Service
 public class PersonServiceImpl implements PersonService {
 
-	private ModelMapper modelMapper;
-	private PersonRepository personRepository;
-
-	@Autowired
-	public PersonServiceImpl(ModelMapper modelMapper, PersonRepository personRepository) {
-		this.modelMapper = modelMapper;
-		this.personRepository = personRepository;
-	}
+	final private ModelMapper modelMapper;
+	final private PersonRepository personRepository;
 
 	@Override
 	public PersonDTO.ResPerson getPerson(Long id) {

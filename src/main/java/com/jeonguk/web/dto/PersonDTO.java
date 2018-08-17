@@ -6,7 +6,6 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 public class PersonDTO {
-
 	@Data
 	public static class ReqPerson {
 		private String personName;
@@ -16,7 +15,7 @@ public class PersonDTO {
 	public static class ResPerson {
 		private Long id;
 		private String personName;
-		@JsonFormat(pattern = "yyyy-MM-dd kk:mm:ss")
+		@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 		private LocalDateTime createdAt;
 	}
 }

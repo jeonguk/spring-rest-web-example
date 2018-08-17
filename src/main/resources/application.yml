@@ -1,11 +1,9 @@
-app:
-  name: spring-rest-web
-
 server:
   port: 8080
-  contextPath: /
 
 spring:
+  application:
+    name: spring-rest-web
 # Datasource
   datasource:
     url: jdbc:h2:file:~/test
