@@ -25,4 +25,5 @@ public class PersonController {
 	PersonDTO.ResPerson savePerson(@RequestBody PersonDTO.ReqPerson newPerson) {
 		return personService.savePerson(newPerson);
 	}
+	
 }
