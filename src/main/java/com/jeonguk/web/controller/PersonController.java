@@ -30,4 +30,5 @@ public class PersonController {
 	String getGreeting(@PathVariable String name) {
 		return personService.getGreeting(name);
 	}
+
 }
