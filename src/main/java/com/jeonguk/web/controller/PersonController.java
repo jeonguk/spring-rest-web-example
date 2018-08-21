@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @ApiVersion
 public class PersonController {
 
-	final private PersonService personService;
+	private final PersonService personService;
 
 	@GetMapping("/{id}")
 	PersonDTO.ResPerson getPerson(@PathVariable Long id) {
@@ -24,5 +24,10 @@ public class PersonController {
 	@PostMapping
 	PersonDTO.ResPerson savePerson(@RequestBody PersonDTO.ReqPerson newPerson) {
 		return personService.savePerson(newPerson);
+	}
+
+	@GetMapping("/circuit/{name}")
+	String getGreeting(@PathVariable String name) {
+		return personService.getGreeting(name);
 	}
 }
