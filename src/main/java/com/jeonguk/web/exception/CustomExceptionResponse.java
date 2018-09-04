@@ -6,7 +6,7 @@ import lombok.Data;
 public class CustomExceptionResponse {
 	private String message;
 	public static CustomExceptionResponse valueOf(CustomException e) {
-		CustomExceptionResponse response = new CustomExceptionResponse();
+		final CustomExceptionResponse response = new CustomExceptionResponse();
 		response.setMessage(e.getReasonPhrase());
 		return response;
 	}

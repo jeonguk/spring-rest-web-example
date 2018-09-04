@@ -3,6 +3,9 @@ package com.jeonguk.web.exception;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+/**
+ * throw new CustomException(CustomStatus.RESOURCE_NOT_FOUND)
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class CustomException extends RuntimeException {
